@@ -1,4 +1,4 @@
-package main.java.com.finance.backend.service;
+package com.finance.backend.service;
 
 import com.finance.backend.model.Transaction;
 import com.finance.backend.repository.TransactionRepository;
