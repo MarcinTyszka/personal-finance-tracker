@@ -30,8 +30,18 @@ public class TransactionController {
         return service.addTransaction(transaction);
     }
 
+    @DeleteMapping("/{id}")
+    public void deleteTransaction(@PathVariable Long id) {
+        service.deleteTransaction(id);
+    }
+
     @GetMapping("/balance")
     public BigDecimal getBalance() {
         return service.calculateBalance();
+    }
+
+    @PutMapping("/{id}")
+    public Transaction updateTransaction(@PathVariable Long id, @RequestBody Transaction transaction) {
+        return service.updateTransaction(id, transaction);
     }
 }

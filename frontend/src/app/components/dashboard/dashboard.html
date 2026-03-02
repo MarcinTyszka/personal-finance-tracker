@@ -1,6 +1,45 @@
 <div class="dashboard-container">
   <h2>Current Balance: {{ balance }}</h2>
 
+  <h3>{{ isEditMode ? 'Edit Transaction' : 'Add New Transaction' }}</h3>
+  <form [formGroup]="transactionForm" (ngSubmit)="onSubmit()">
+    <div>
+      <label for="amount">Amount: </label>
+      <input id="amount" type="number" formControlName="amount">
+    </div>
+
+    <div>
+      <label for="type">Type: </label>
+      <select id="type" formControlName="type">
+        <option value="INCOME">Income</option>
+        <option value="EXPENSE">Expense</option>
+      </select>
+    </div>
+
+    <div>
+      <label for="category">Category: </label>
+      <input id="category" type="text" formControlName="category">
+    </div>
+
+    <div>
+      <label for="description">Description: </label>
+      <input id="description" type="text" formControlName="description">
+    </div>
+
+    <div>
+      <label for="date">Date: </label>
+      <input id="date" type="date" formControlName="date">
+    </div>
+
+    <button type="submit" [disabled]="transactionForm.invalid">
+      {{ isEditMode ? 'Update' : 'Add Transaction' }}
+    </button>
+    
+    @if (isEditMode) {
+      <button type="button" (click)="cancelEdit()">Cancel</button>
+    }
+  </form>
+
   <h3>Recent Transactions</h3>
   <table>
     <thead>
@@ -10,6 +49,7 @@
         <th>Category</th>
         <th>Type</th>
         <th>Amount</th>
+        <th>Actions</th>
       </tr>
     </thead>
     <tbody>
@@ -20,10 +60,14 @@
           <td>{{ transaction.category }}</td>
           <td>{{ transaction.type }}</td>
           <td>{{ transaction.amount }}</td>
+          <td>
+            <button (click)="editTransaction(transaction)">Edit</button>
+            <button (click)="deleteTransaction(transaction.id)">Delete</button>
+          </td>
         </tr>
       } @empty {
         <tr>
-          <td colspan="5">No transactions found.</td>
+          <td colspan="6">No transactions found.</td>
         </tr>
       }
     </tbody>

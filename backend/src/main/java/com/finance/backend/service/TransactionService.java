@@ -27,6 +27,23 @@ public class TransactionService {
         return repository.save(transaction);
     }
 
+    public void deleteTransaction(Long id) {
+        repository.deleteById(id);
+    }
+
+    public Transaction updateTransaction(Long id, Transaction updatedData) {
+        Transaction existing = repository.findById(id).orElse(null);
+        if (existing != null) {
+            existing.setAmount(updatedData.getAmount());
+            existing.setType(updatedData.getType());
+            existing.setCategory(updatedData.getCategory());
+            existing.setDescription(updatedData.getDescription());
+            existing.setDate(updatedData.getDate());
+            return repository.save(existing);
+        }
+        return null;
+    }
+
     public BigDecimal calculateBalance() {
         List<Transaction> transactions = repository.findAll();
         BigDecimal balance = BigDecimal.ZERO;
