@@ -21,8 +21,8 @@ public class TransactionController {
     }
 
     @GetMapping
-    public List<Transaction> getAllTransactions() {
-        return service.getAllTransactions();
+    public List<Transaction> getTransactions(@RequestParam(required = false) String type) {
+        return service.getTransactions(type);
     }
 
     @PostMapping

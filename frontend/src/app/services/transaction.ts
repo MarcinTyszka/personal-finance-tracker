@@ -11,8 +11,12 @@ export class TransactionService {
 
   constructor(private http: HttpClient) { }
 
-  getTransactions(): Observable<Transaction[]> {
-    return this.http.get<Transaction[]>(this.apiUrl);
+  getTransactions(type?: string): Observable<Transaction[]> {
+    let url = this.apiUrl;
+    if (type) {
+      url += `?type=${type}`;
+    }
+    return this.http.get<Transaction[]>(url);
   }
 
   addTransaction(transaction: Transaction): Observable<Transaction> {

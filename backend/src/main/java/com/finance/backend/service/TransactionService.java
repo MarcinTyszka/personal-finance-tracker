@@ -58,4 +58,12 @@ public class TransactionService {
 
         return balance;
     }
+
+
+    public List<Transaction> getTransactions(String type) {
+        if (type != null && !type.trim().isEmpty()) {
+            return repository.findByTypeIgnoreCase(type);
+        }
+        return repository.findAll();
+    }
 }

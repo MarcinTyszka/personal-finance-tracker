@@ -21,6 +21,7 @@ export class DashboardComponent implements OnInit {
   transactionForm: FormGroup;
   isEditMode: boolean = false;
   currentEditId: number | undefined;
+  currentFilter: string = '';
   
   private transactionService = inject(TransactionService);
   private cdr = inject(ChangeDetectorRef);
@@ -40,7 +41,7 @@ export class DashboardComponent implements OnInit {
   }
 
   private loadData(): void {
-    this.transactionService.getTransactions().subscribe({
+    this.transactionService.getTransactions(this.currentFilter).subscribe({
       next: (data) => {
         this.transactions = data;
         this.cdr.detectChanges();
@@ -120,4 +121,10 @@ export class DashboardComponent implements OnInit {
       }
     }
   }
+
+  setFilter(type: string): void {
+    this.currentFilter = type;
+    this.loadData();
+  }
+
 }

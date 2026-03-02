@@ -40,7 +40,14 @@
     }
   </form>
 
-  <h3>Recent Transactions</h3>
+<h3>Recent Transactions</h3>
+  
+  <div style="margin-bottom: 15px;">
+    <span>Filter: </span>
+    <button (click)="setFilter('')" [disabled]="currentFilter === ''">All</button>
+    <button (click)="setFilter('INCOME')" [disabled]="currentFilter === 'INCOME'">Income</button>
+    <button (click)="setFilter('EXPENSE')" [disabled]="currentFilter === 'EXPENSE'">Expense</button>
+  </div>
   <table>
     <thead>
       <tr>

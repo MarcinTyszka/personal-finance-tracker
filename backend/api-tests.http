@@ -1,29 +1,95 @@
-### Add a new income transaction
+### Add Salary
 POST http://localhost:8080/api/transactions
 Content-Type: application/json
 
 {
-    "amount": 5000.00,
-    "type": "INCOME",
-    "category": "Salary",
-    "description": "Monthly salary",
-    "date": "2026-03-01"
+  "amount": 8500.00,
+  "type": "INCOME",
+  "category": "Salary",
+  "description": "March 2026 Salary",
+  "date": "2026-03-01"
 }
 
-### Add a new expense transaction
+### Add Rent
 POST http://localhost:8080/api/transactions
 Content-Type: application/json
 
 {
-    "amount": 150.50,
-    "type": "EXPENSE",
-    "category": "Groceries",
-    "description": "Weekend shopping",
-    "date": "2026-03-02"
+  "amount": 2500.00,
+  "type": "EXPENSE",
+  "category": "Housing",
+  "description": "Apartment Rent",
+  "date": "2026-03-02"
 }
 
-### Get all transactions
-GET http://localhost:8080/api/transactions
+### Add Groceries
+POST http://localhost:8080/api/transactions
+Content-Type: application/json
 
-### Get current balance
-GET http://localhost:8080/api/transactions/balance
+{
+  "amount": 350.50,
+  "type": "EXPENSE",
+  "category": "Food",
+  "description": "Weekend groceries",
+  "date": "2026-03-03"
+}
+
+### Add Internet Bill
+POST http://localhost:8080/api/transactions
+Content-Type: application/json
+
+{
+  "amount": 60.00,
+  "type": "EXPENSE",
+  "category": "Utilities",
+  "description": "Fiber internet",
+  "date": "2026-03-04"
+}
+
+### Add Freelance Income
+POST http://localhost:8080/api/transactions
+Content-Type: application/json
+
+{
+  "amount": 1200.00,
+  "type": "INCOME",
+  "category": "Freelance",
+  "description": "Web design project",
+  "date": "2026-03-05"
+}
+
+### Add Dining Out
+POST http://localhost:8080/api/transactions
+Content-Type: application/json
+
+{
+  "amount": 140.00,
+  "type": "EXPENSE",
+  "category": "Food",
+  "description": "Dinner with friends",
+  "date": "2026-03-06"
+}
+
+### Add Gym Membership
+POST http://localhost:8080/api/transactions
+Content-Type: application/json
+
+{
+  "amount": 100.00,
+  "type": "EXPENSE",
+  "category": "Health",
+  "description": "Monthly gym pass",
+  "date": "2026-03-07"
+}
+
+### Add Car Fuel
+POST http://localhost:8080/api/transactions
+Content-Type: application/json
+
+{
+  "amount": 250.00,
+  "type": "EXPENSE",
+  "category": "Transport",
+  "description": "Gas station",
+  "date": "2026-03-08"
+}
