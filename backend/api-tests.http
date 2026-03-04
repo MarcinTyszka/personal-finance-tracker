@@ -1,4 +1,6 @@
-### Add Salary
+### JANUARY 2026 ###
+
+### Jan Salary
 POST http://localhost:8080/api/transactions
 Content-Type: application/json
 
@@ -6,11 +8,11 @@ Content-Type: application/json
   "amount": 8500.00,
   "type": "INCOME",
   "category": "Salary",
-  "description": "March 2026 Salary",
-  "date": "2026-03-01"
+  "description": "January salary",
+  "date": "2026-01-01"
 }
 
-### Add Rent
+### Jan Rent
 POST http://localhost:8080/api/transactions
 Content-Type: application/json
 
@@ -18,78 +20,180 @@ Content-Type: application/json
   "amount": 2500.00,
   "type": "EXPENSE",
   "category": "Housing",
-  "description": "Apartment Rent",
-  "date": "2026-03-02"
+  "description": "Rent payment",
+  "date": "2026-01-02"
 }
 
-### Add Groceries
-POST http://localhost:8080/api/transactions
-Content-Type: application/json
-
-{
-  "amount": 350.50,
-  "type": "EXPENSE",
-  "category": "Food",
-  "description": "Weekend groceries",
-  "date": "2026-03-03"
-}
-
-### Add Internet Bill
-POST http://localhost:8080/api/transactions
-Content-Type: application/json
-
-{
-  "amount": 60.00,
-  "type": "EXPENSE",
-  "category": "Utilities",
-  "description": "Fiber internet",
-  "date": "2026-03-04"
-}
-
-### Add Freelance Income
+### Jan Food
 POST http://localhost:8080/api/transactions
 Content-Type: application/json
 
 {
   "amount": 1200.00,
-  "type": "INCOME",
-  "category": "Freelance",
-  "description": "Web design project",
-  "date": "2026-03-05"
-}
-
-### Add Dining Out
-POST http://localhost:8080/api/transactions
-Content-Type: application/json
-
-{
-  "amount": 140.00,
   "type": "EXPENSE",
   "category": "Food",
-  "description": "Dinner with friends",
-  "date": "2026-03-06"
+  "description": "Monthly groceries",
+  "date": "2026-01-15"
 }
 
-### Add Gym Membership
+### Jan Freelance
 POST http://localhost:8080/api/transactions
 Content-Type: application/json
 
 {
-  "amount": 100.00,
+  "amount": 1500.00,
+  "type": "INCOME",
+  "category": "Freelance",
+  "description": "Website fix",
+  "date": "2026-01-20"
+}
+
+### FEBRUARY 2026 ###
+
+### Feb Salary
+POST http://localhost:8080/api/transactions
+Content-Type: application/json
+
+{
+  "amount": 8500.00,
+  "type": "INCOME",
+  "category": "Salary",
+  "description": "February salary",
+  "date": "2026-02-01"
+}
+
+### Feb Rent
+POST http://localhost:8080/api/transactions
+Content-Type: application/json
+
+{
+  "amount": 2500.00,
   "type": "EXPENSE",
-  "category": "Health",
-  "description": "Monthly gym pass",
-  "date": "2026-03-07"
+  "category": "Housing",
+  "description": "Rent payment",
+  "date": "2026-02-02"
 }
 
-### Add Car Fuel
+### Feb Car
 POST http://localhost:8080/api/transactions
 Content-Type: application/json
 
 {
-  "amount": 250.00,
+  "amount": 800.00,
   "type": "EXPENSE",
   "category": "Transport",
-  "description": "Gas station",
-  "date": "2026-03-08"
+  "description": "Car service",
+  "date": "2026-02-10"
+}
+
+### Feb Food
+POST http://localhost:8080/api/transactions
+Content-Type: application/json
+
+{
+  "amount": 1100.00,
+  "type": "EXPENSE",
+  "category": "Food",
+  "description": "Groceries",
+  "date": "2026-02-15"
+}
+
+### MARCH 2026 ###
+
+### Mar Salary
+POST http://localhost:8080/api/transactions
+Content-Type: application/json
+
+{
+  "amount": 8500.00,
+  "type": "INCOME",
+  "category": "Salary",
+  "description": "March salary",
+  "date": "2026-03-01"
+}
+
+### Mar Rent
+POST http://localhost:8080/api/transactions
+Content-Type: application/json
+
+{
+  "amount": 2500.00,
+  "type": "EXPENSE",
+  "category": "Housing",
+  "description": "Rent payment",
+  "date": "2026-03-02"
+}
+
+### Mar Shopping
+POST http://localhost:8080/api/transactions
+Content-Type: application/json
+
+{
+  "amount": 1500.00,
+  "type": "EXPENSE",
+  "category": "Entertainment",
+  "description": "New gaming console",
+  "date": "2026-03-10"
+}
+
+### Mar Food
+POST http://localhost:8080/api/transactions
+Content-Type: application/json
+
+{
+  "amount": 1350.00,
+  "type": "EXPENSE",
+  "category": "Food",
+  "description": "Groceries and dinner",
+  "date": "2026-03-20"
+}
+
+### APRIL 2026 ###
+
+### Apr Salary
+POST http://localhost:8080/api/transactions
+Content-Type: application/json
+
+{
+  "amount": 9000.00,
+  "type": "INCOME",
+  "category": "Salary",
+  "description": "April salary with bonus",
+  "date": "2026-04-01"
+}
+
+### Apr Rent
+POST http://localhost:8080/api/transactions
+Content-Type: application/json
+
+{
+  "amount": 2500.00,
+  "type": "EXPENSE",
+  "category": "Housing",
+  "description": "Rent payment",
+  "date": "2026-04-02"
+}
+
+### Apr Food
+POST http://localhost:8080/api/transactions
+Content-Type: application/json
+
+{
+  "amount": 950.00,
+  "type": "EXPENSE",
+  "category": "Food",
+  "description": "Groceries",
+  "date": "2026-04-10"
+}
+
+### Apr Utility
+POST http://localhost:8080/api/transactions
+Content-Type: application/json
+
+{
+  "amount": 300.00,
+  "type": "EXPENSE",
+  "category": "Utilities",
+  "description": "Electricity bill",
+  "date": "2026-04-15"
 }
