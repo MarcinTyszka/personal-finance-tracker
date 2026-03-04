@@ -48,6 +48,60 @@
     <button (click)="setFilter('INCOME')" [disabled]="currentFilter === 'INCOME'">Income</button>
     <button (click)="setFilter('EXPENSE')" [disabled]="currentFilter === 'EXPENSE'">Expense</button>
   </div>
+
+  <div class="charts-wrapper" style="display: flex; gap: 40px; margin: 20px 0; flex-wrap: wrap;">
+    
+    <div style="width: 350px;">
+      <h3>Expense Structure</h3>
+      @if (pieChartData.labels && pieChartData.labels.length > 0) {
+        <canvas baseChart
+          [data]="pieChartData"
+          [options]="pieChartOptions"
+          [type]="pieChartType">
+        </canvas>
+      } @else {
+        <p>No expenses found.</p>
+      }
+    </div>
+
+    <div style="width: 350px;">
+      <h3>Income Structure</h3>
+      @if (incomePieChartData.labels && incomePieChartData.labels.length > 0) {
+        <canvas baseChart
+          [data]="incomePieChartData"
+          [options]="pieChartOptions"
+          [type]="pieChartType">
+        </canvas>
+      } @else {
+        <p>No income found.</p>
+      }
+    </div>
+
+  </div>
+
+  <div style="margin: 40px 0;">
+    <h3>Cash Flow Trend</h3>
+    
+    <div style="margin-bottom: 10px;">
+      <button (click)="setTimeViewMode('monthly')" [disabled]="timeViewMode === 'monthly'">Monthly</button>
+      <button (click)="setTimeViewMode('quarterly')" [disabled]="timeViewMode === 'quarterly'">Quarterly</button>
+      <button (click)="setTimeViewMode('yearly')" [disabled]="timeViewMode === 'yearly'">Yearly</button>
+    </div>
+
+    <div style="height: 300px; width: 100%; max-width: 800px;">
+      @if (barChartData.labels && barChartData.labels.length > 0) {
+        <canvas baseChart
+          [data]="barChartData"
+          [options]="barChartOptions"
+          [type]="barChartType">
+        </canvas>
+      } @else {
+        <p>No data available for time analysis.</p>
+      }
+    </div>
+  </div>
+
+
   <table>
     <thead>
       <tr>
