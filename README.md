@@ -21,7 +21,7 @@ A modern, full-stack web application designed to help users track their income a
 - CSS3 (Custom modern dashboard UI)
 
 ### Infrastructure
-- Docker & Docker Compose (Database orchestration)
+- Docker & Docker Compose (Full-stack orchestration)
 
 ## Key Features
 
@@ -32,45 +32,25 @@ A modern, full-stack web application designed to help users track their income a
   - Bar Charts: Cash flow trends with Monthly, Quarterly, and Yearly views.
 - Advanced Filtering: Filter transactions by type (Income/Expense) to drill down into data.
 - Responsive Design: Modern dashboard optimized for different screen sizes.
-- Persistent Storage: Data is safely stored in a PostgreSQL database running in a Docker container.
+- Fully Containerized: The entire application (database, backend, frontend) runs in isolated Docker containers.
 
 ## Getting Started
 
 ### Prerequisites
+- Git
 - Docker Desktop
-- Java 17 JDK
-- Node.js & npm
-- Angular CLI
 
 ### Installation and Setup
 
 1. Clone the repository
-
-```bash
-git clone [https://github.com/MarcinTyszka/personal-finance-tracker.git](https://github.com/MarcinTyszka/personal-finance-tracker.git)
-cd personal-finance-tracker
-```
-
-2. Start the Database (Docker)
-
-```bash
-docker-compose up -d
-```
-
-3. Run the Backend
-
-```bash
-cd backend
-./mvnw spring-boot:run
-```
-
-4. Run the Frontend
-
-```bash
-cd frontend
-npm install
-npm start
-```
-
-5. Access the App
+   ```bash
+   git clone https://github.com/MarcinTyszka/personal-finance-tracker.git
+   cd personal-finance-tracker
+   ```
+2. Build and run the application
+In the root directory, run the following command to build the images and start all containers in the background:
+    ```bash
+    docker-compose up --build -d
+   ```
+3. Access the App
 Open your browser and navigate to http://localhost:4200
